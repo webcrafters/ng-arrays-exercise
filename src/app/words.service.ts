@@ -17,6 +17,17 @@ export class WordsService {
     'array',
     'code',
     'return',
+    'angular',
+    'development',
+    'rendering',
+    'frontend',
+    'application',
+    'expression',
+    'closure',
+    'observable',
+    'array',
+    'code',
+    'return',
   ];
 
   constructor() {}

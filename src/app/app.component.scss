@@ -1,13 +1,19 @@
 .wrapper {
   height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: stretch;
+  position: relative;
 }
 
 .row {
+  // inner
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-evenly;
+
+  // outer
+  width: 100%;
+  position: absolute;
+  left: 0;
+  transform: translateY(
+    -9px
+  ); // only works if we know the div height for any row to be 18px
 }
