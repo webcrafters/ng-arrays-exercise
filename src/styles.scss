@@ -9,4 +9,5 @@ body {
 html,
 body {
   font-family: "Courier New", Courier, monospace;
+  overflow: hidden; // otherwise, scrollbar would appear because we shift the rows down via transform: translateY()
 }

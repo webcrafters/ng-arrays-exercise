@@ -16,14 +16,12 @@ export class AppComponent {
   }
 
   getTopFor(i: number, totalWords: number): string {
-    // solution based on displaying each word div with its CENTER at the value calculated below
-    const divHeight = 18;
-    // we leave room for one half div at the bottom and one half div at the top by reducing the supposedly available height
-    const availableHeight = window.innerHeight - divHeight;
+    // solution based on setting the actual top value for the word-div
+
+    const divHeight = 18; // only works if we know the div height for any row to be 18px
+    const availableHeight = window.innerHeight;
     const slotHeight = availableHeight / totalWords; // n words => n slots of this height
-    return `${
-      slotHeight * (i + 0.5) + // at the vertical middle of the slot is the vertical middle of the div
-      divHeight / 2 // each element gets translated with half its height down, to get central overall placement within the modified availableHeight
-    }px`;
+    const adjustmentAtIndex = (slotHeight - divHeight) * (i / totalWords); // compensates for difference between divHeight and slotHeight
+    return `${slotHeight * i + adjustmentAtIndex}px`;
   }
 }
