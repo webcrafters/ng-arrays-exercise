@@ -60,8 +60,9 @@ export class WordsService {
     }
 
     // sol 3
-    // generate an array of [times] copies of this_words
-    // flatten that array - use concat and spread operator
+    // decalarative concat
+    // generate an array of copies of this_words
+    // flatten that array with concat and spread operator
 
     // const copies = new Array(times).fill(this._words);
     // const result = [].concat(...copies);
