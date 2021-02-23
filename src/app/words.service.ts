@@ -54,18 +54,18 @@ export class WordsService {
 
     // sol 2
     // imperative concat
-    let result: string[] = [];
-    for (let i = 0; i < times; i++) {
-      result = result.concat(this._words);
-    }
+    // let result: string[] = [];
+    // for (let i = 0; i < times; i++) {
+    //   result = result.concat(this._words);
+    // }
 
     // sol 3
     // decalarative concat
     // generate an array of copies of this_words
     // flatten that array with concat and spread operator
 
-    // const copies = new Array(times).fill(this._words);
-    // const result = [].concat(...copies);
+    const copies = new Array(times).fill(this._words);
+    const result = [].concat(...copies);
 
     return of(result);
   }
