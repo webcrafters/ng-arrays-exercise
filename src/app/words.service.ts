@@ -16,7 +16,6 @@ export class WordsService {
     'observable',
     'array',
     'code',
-    'subscription',
     'return',
     'angular',
     'development',
@@ -41,38 +40,10 @@ export class WordsService {
   /**
    * approach 1 - return an array that repeats the elements from this._words - as many times as necessary to have a length > @param howMany
    */
-  getManyWords1(howMany: number): Observable<string[]> {
-    const n = this._words.length;
-    const times = Math.ceil(howMany / n);
-
-    // sol 1
-    // imperative push
-    // const result = [];
-    // for (let i = 0; i < times; i++) {
-    //   result.push(...this._words);
-    // }
-
-    // sol 2
-    // imperative concat
-    let result: string[] = [];
-    for (let i = 0; i < times; i++) {
-      result = result.concat(this._words);
-    }
-
-    // sol 3
-    // generate an array of [times] copies of this_words
-    // flatten that array - use concat and spread operator
-
-    // const copies = new Array(times).fill(this._words);
-    // const result = [].concat(...copies);
-
-    return of(result);
-  }
+  getManyWords1(howMany: number) {}
 
   /**
    * approach 2 - use another data source - a kind of lipsum package from npm. Generate exactly @param howMany random words with it
    */
-  getManyWords2(howMany: number): Observable<string[]> {
-    return this.getWords();
-  }
+  getManyWords2(howMany: number) {}
 }

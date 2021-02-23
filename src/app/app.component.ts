@@ -24,8 +24,4 @@ export class AppComponent {
     const adjustmentAtIndex = (slotHeight - divHeight) * (i / totalWords); // compensates for difference between divHeight and slotHeight
     return `${slotHeight * i + adjustmentAtIndex}px`;
   }
-
-  updateCount(c: number) {
-    this.words$ = this.wordsSvc.getManyWords1(c);
-  }
 }
