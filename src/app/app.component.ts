@@ -11,7 +11,7 @@ export class AppComponent {
   words$ = this.wordsSvc.getWords();
   constructor(private wordsSvc: WordsService) {}
 
-  rowsFromWords(words: string[]): string[][] {
+  processWords(words: string[]): string[][] {
     return words.map((word) => word.split(''));
   }
 
