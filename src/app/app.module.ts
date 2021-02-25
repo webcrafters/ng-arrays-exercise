@@ -5,14 +5,9 @@ import { AppComponent } from './app.component';
 import { WordCountComponent } from './word-count/word-count.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    WordCountComponent
-  ],
-  imports: [
-    BrowserModule
-  ],
+  declarations: [AppComponent, WordCountComponent],
+  imports: [BrowserModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

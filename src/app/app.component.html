@@ -4,8 +4,8 @@
       {{ letter }}
     </div>
   </div>
+  <app-word-count
+    class="word-count"
+    (countChanged)="updateCount($event)"
+  ></app-word-count>
 </div>
-<app-word-count
-  class="word-count"
-  (countChanged)="updateCount($event)"
-></app-word-count>
