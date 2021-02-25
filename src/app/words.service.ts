@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { LoremIpsum } from 'lorem-ipsum';
 import { Observable, of } from 'rxjs';
 
 @Injectable({
@@ -31,7 +32,7 @@ export class WordsService {
     'return',
   ];
 
-  constructor() {}
+  constructor(private lipsum: LoremIpsum) {}
 
   getWords(): Observable<string[]> {
     return of(this._words);
@@ -41,7 +42,7 @@ export class WordsService {
   /**
    * approach 1 - return an array that repeats the elements from this._words - as many times as necessary to have a length > @param howMany
    */
-  getManyWords1(howMany: number): Observable<string[]> {
+  getManyWords(howMany: number): Observable<string[]> {
     const n = this._words.length;
     const times = Math.ceil(howMany / n);
 
@@ -73,7 +74,7 @@ export class WordsService {
   /**
    * approach 2 - use another data source - a kind of lipsum package from npm. Generate exactly @param howMany random words with it
    */
-  getManyWords2(howMany: number): Observable<string[]> {
-    return this.getWords();
+  getManyWordsLipsum(howMany: number): Observable<string[]> {
+    return of(this.lipsum.generateWords(howMany).split(' '));
   }
 }

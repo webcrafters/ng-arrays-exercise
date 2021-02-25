@@ -16,6 +16,6 @@ export class AppComponent {
   }
 
   updateCount(c: number) {
-    this.words$ = this.wordsSvc.getManyWords1(c);
+    this.words$ = this.wordsSvc.getManyWords(c);
   }
 }
