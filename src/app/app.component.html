@@ -1,8 +1,6 @@
 <div class="wrapper" *ngIf="words$ | async as words">
-  <div class="row" *ngFor="let rowWithLetters of rowsFromWords(words)">
-    <div class="letter" *ngFor="let letter of rowWithLetters">
-      {{ letter }}
-    </div>
+  <div class="row" *ngFor="let word of words">
+    {{ word }}
   </div>
   <app-word-count
     class="word-count"

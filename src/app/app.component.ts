@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { WordsService } from './words.service';
+import { of } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -8,14 +9,10 @@ import { WordsService } from './words.service';
 })
 export class AppComponent {
   title = 'arrays-exercise';
-  words$ = this.wordsSvc.getWords();
+  words$ = of([] as string[]);
   constructor(private wordsSvc: WordsService) {}
 
-  rowsFromWords(words: string[]): string[][] {
-    return words.map((word) => word.split(''));
-  }
-
   updateCount(c: number) {
-    this.words$ = this.wordsSvc.getManyWords(c);
+    this.words$ = this.wordsSvc.getManyWordsLipsum(c);
   }
 }
